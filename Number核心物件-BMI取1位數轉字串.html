@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<script language="javascript">
+	var x =new Number(123.456);
+	var h = prompt("請輸入身高(公分)","")
+	var w = prompt("請輸入體重(公斤)","")
+	var bmi = w/((h/100)**2)
+	if(bmi<18.5){
+		window.document.write("bmi="+bmi.toFixed(1).toString()+", 體重過輕<br>");
+	}else if(18.5<=bmi<=24){
+		window.document.write("bmi="+bmi.toFixed(1).toString()+", 正常範圍<br>");
+	}else{
+		window.document.write("bmi="+bmi.toFixed(1).toString()+", 體重過重<br>");
+	}
+</script>
+</head>
+
+<body>
+</body>
+</html>

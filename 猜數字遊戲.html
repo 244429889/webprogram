@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>無標題文件</title>
+</head>
+
+<body>
+	<script language="javascript">
+		var answer = Math.floor(Math.random()*100)+1;
+		var guess = prompt("請輸入1~100數字: ","");
+		var x = 100;
+		var y = 1;
+		var time = 0;
+		while(guess != answer)
+		{
+			if(guess > answer)
+			{
+				time += 1;
+				x = guess;
+				alert("太大");
+				guess=prompt("共猜了"+time+"次,請輸入"+y+"~"+x+"數字: ","");
+				
+			}
+			else if(guess < answer)
+			{
+				time += 1;
+				y = guess;
+				alert("太小");
+				guess=prompt("共猜了"+time+"次,請輸入"+y+"~"+x+"數字: ","");
+			}
+		}
+		time += 1;
+		alert("猜對了,共猜了"+time+"次")
+	</script>
+</body>
+</html>

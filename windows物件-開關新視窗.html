@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+	<script language="javascript">
+		var myWin=null;
+		function operNewWindow(){
+			myWin=window.open("js_object_windows_new.html","myWin","height=200,width=400");
+			myWin.moveBy(400,200);
+		}
+		function closeNewWindow(){
+			myWin.close();
+		}
+		function closeWindows(){
+			window.close();
+		}
+	</script>
+	<a href="javascript:window.openNewWindow();">開啟新視窗</a>
+	<a href="javascript:window.closeNewWindow();">關閉新視窗</a>
+	<a href="javascript:window.closeWindows();">關閉原視窗</a>
+</body>
+</html>
