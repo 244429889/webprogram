@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>無標題文件</title>
+	<script language="javascript">
+		function showMsg_inner(){
+			var msg = document.getElementById("message");
+			msg.innerHTML = "<i>新年快樂-inner</i>";//不會再有斜體，因抓到的包含<i></i>會一起被"新年快樂"取代
+		}
+		function showMsg_outer(){
+			var msg = document.getElementById("message");
+			msg.outerHTML = "新年快樂-outer";//會跑上來且沒有斜體，因連同<p></p>都抓取後被取代
+		}
+		function showMsg_text(){
+			var msg = document.getElementById("message");
+			msg.textContent = "<i>新年快樂-textContent</i>";
+		}
+	</script>
+</head>
+
+<body>
+	<input type="button" value="顯示訊息.inner" onClick="javascript:showMsg_inner();">
+	<input type="button" value="顯示訊息.outer" onClick="javascript:showMsg_outer();">
+	<input type="button" value="顯示訊息.text" onClick="javascript:showMsg_text();">
+	
+	<div id="message"><b>認真上課</b></div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>無標題文件</title>
+</head>
+
+<body>
+	<h2>報名截止時間: <span id="deadline"></span></h2>
+		<h2>現在時間: <span id="current-time"></span></h2>
+		<h2>距離報名截止剩餘時間: <span id="countdown"></span></h2>
+		<script>
+			// 取得報名截止時間（假設為2024年5 月30 日23:59:59）
+			var deadline = new Date("2024-06-14T23:59:59");//同時給定日期值,注意格式
+			document.getElementById("deadline").textContent = deadline.toLocaleString();
+			function updateTimer(){
+				var currentTime = new Date();
+				document.getElementById("current-time").textContent = currentTime.toLocaleString(); 
+				var timeDiff = deadline.getTime() -currentTime.getTime(); //getTime()自1970/1/1起之秒數
+				var days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+				var hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+				var minutes = Math.floor((timeDiff % (1000 * 60* 60)) / (1000 * 60));
+				var seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);// 顯示距離報名截止剩餘時
+				document.getElementById("countdown").textContent = days + " 天" + hours + " 小時" + minutes + " 分鐘" + seconds + " 秒";// 每秒更新一次時間
+				setTimeout(updateTimer, 1000);//每秒一次
+			}
+			updateTimer();
+		</script>
+</body>
+</html>

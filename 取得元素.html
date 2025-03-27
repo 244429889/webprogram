@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>無標題文件</title>
+</head>
+
+<body>
+	<input type="checkbox" name="phone" id="cb1" value="htc">htc
+	<input type="checkbox" name="phone" id="cb2" value="apple">apple
+	<input type="checkbox" name="phone" id="cb3" value="asus">asus<br>
+	<script language="javascript">
+		var Element1 = document.getElementById("cb1");
+		var Element2 = document.getElementsByName("phone");
+		var Element3 = document.getElementsByTagName("input");
+		
+		window.document.write(Element1.value+"<br>");
+		window.document.write(Element1.id+"<br>");
+		window.document.write(Element1.type+"<br>");
+		window.document.write(Element1.tagName+"<br>");
+		
+		window.document.write(Element2[0].value+"<br>");
+		
+		window.document.write(Element3.length+"<br>");
+		window.document.write(Element3[1].value+"<br>");
+		
+	</script>
+		
+</body>
+</html>

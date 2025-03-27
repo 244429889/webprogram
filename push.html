@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>無標題文件</title>
+</head>
+
+<body>
+	<script language="javascript">
+		var Quotes1 = new Array("一日之計在於晨","一個人年輕的時候，不會思索，他將一事無成","一個人不怕錯，就怕不改過，改錯並不難");
+		var Quotes2 = new Array("人，最大的敵人是自己","成功永遠屬於那些愛拼搏的人");
+		var Quotes3 = Quotes1.concat(Quotes2);
+		function displayQuotes(category){
+			var Quotes3 = [];
+			if(category==='A'){
+				Quotes3=Quotes1;
+			}
+			else if(category==='B'){
+				Quotes3=Quotes2;
+			}
+			else if(category==='all'){
+				Quotes3=Quotes1.concat(Quotes2);
+			}
+			var formattedQuotes=Quotes3.join("<br>");
+			document.getElementById('quotes').innerHTML = formattedQuotes;
+		}
+		function addQuote(){
+			var newQuote = prompt("請輸入一個智慧語錄:");
+			if(newQuote !== null && newQuote !==""){
+				Quotes3.push(newQuote);
+				display('all')
+			}else{
+				alert("請輸入有效的智慧語錄")
+			}
+		}
+	</script>
+	<h1><a href="javascript:displayQuotes('A');">語錄1</a></h1>
+	<h1><a href="javascript:displayQuotes('B');">語錄2</a></h1>
+	<h1><a href="javascript:displayQuotes('all');">語錄(全)</a></h1>
+	<div id = "quotes"></div>
+	<botton onclick = "addQuote();">新增智慧語錄</botton>
+</body>
+</html>
